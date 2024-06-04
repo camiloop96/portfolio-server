@@ -1,6 +1,7 @@
 import * as dotenv from "dotenv";
 import getConnection from "../config/dbConfig";
 import app from "./app";
+import { createSocketServer } from "../config/socketConfig";
 
 // Import de variables de entorno
 dotenv.config();
@@ -8,7 +9,13 @@ const PORT: number = parseInt(process.env.PORT || "5001");
 const MODE: string | undefined = process.env.MODE;
 
 // Manejar errores de servidor
-app.on("error", (error: any) => {
+
+// Escuchar el servidor en el puerto especificado
+const server = app.listen(PORT, () => {
+  console.log(`Portfolio app running at port ${PORT}`);
+});
+
+server.on("error", (error: any) => {
   if (error.syscall !== "listen") {
     throw error;
   }
@@ -20,19 +27,12 @@ app.on("error", (error: any) => {
     case "EACCES":
       console.error(bind + " requires elevated privileges");
       process.exit(1);
-      break;
     case "EADDRINUSE":
       console.error(bind + " is already in use");
       process.exit(1);
-      break;
     default:
       throw error;
   }
-});
-
-// Escuchar el servidor en el puerto especificado
-app.listen(PORT, () => {
-  console.log(`Portfolio app running at port ${PORT}`);
 });
 
 // Conexión a base de datos
@@ -41,3 +41,6 @@ if (MODE === "deploy" || MODE === "development") {
 } else {
   console.error("Modo de conexión no válido");
 }
+
+// Socket Server
+export const io = createSocketServer(server);
