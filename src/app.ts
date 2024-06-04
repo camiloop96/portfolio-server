@@ -19,7 +19,7 @@ app.get("/", (req: Request, res: Response) => {
     message: "Server online",
   });
 });
-app.use("/api/c/", AppRoutes);
+app.use("/api/cp/", AppRoutes);
 
 // Manejador de errores para middleware no encontrado
 app.use((req: Request, res: Response) => {
