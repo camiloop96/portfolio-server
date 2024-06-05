@@ -68,4 +68,4 @@ Feel free to reach out if you have any questions or want to collaborate on a pro
 Special thanks to the creators of NodeJS, MongoDB and all the wonderful tools used in this project.
 
 📜 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the Non-Distribution License - see the LICENSE file for details.

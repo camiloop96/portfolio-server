@@ -6,7 +6,7 @@ import { createSocketServer } from "../config/socketConfig";
 // Import de variables de entorno
 dotenv.config();
 const PORT: number = parseInt(process.env.PORT || "5001");
-const MODE: string | undefined = process.env.MODE;
+const MODE: string | undefined = process.env.NODE_ENV;
 
 // Manejar errores de servidor
 

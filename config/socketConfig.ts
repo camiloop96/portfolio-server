@@ -6,13 +6,13 @@ export const createSocketServer = (server: any) => {
   config().parsed;
 
   // Carga de variables de entorno
-  const { ORIGIN_CLIENT_DPY, ORIGIN_CLIENT_DEV, MODE } = process.env;
+  const { ORIGIN_CLIENT_DPY, ORIGIN_CLIENT_DEV, NODE_ENV } = process.env;
 
   let originClient;
 
-  if (MODE === "development") {
+  if (NODE_ENV === "development") {
     originClient = ORIGIN_CLIENT_DEV;
-  } else if (MODE === "deploy") {
+  } else if (NODE_ENV === "deploy") {
     originClient = ORIGIN_CLIENT_DPY;
   } else {
     return null;

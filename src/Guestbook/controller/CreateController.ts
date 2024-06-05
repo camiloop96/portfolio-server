@@ -13,7 +13,6 @@ export const GuestbookCommentCreateController = async (
       "name",
       "company",
       "url",
-      "avatar",
       "message",
     ];
 

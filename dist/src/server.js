@@ -26,15 +26,21 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.io = void 0;
 const dotenv = __importStar(require("dotenv"));
 const dbConfig_1 = __importDefault(require("../config/dbConfig"));
 const app_1 = __importDefault(require("./app"));
+const socketConfig_1 = require("../config/socketConfig");
 // Import de variables de entorno
 dotenv.config();
 const PORT = parseInt(process.env.PORT || "5001");
-const MODE = process.env.MODE;
+const MODE = process.env.NODE_ENV;
 // Manejar errores de servidor
-app_1.default.on("error", (error) => {
+// Escuchar el servidor en el puerto especificado
+const server = app_1.default.listen(PORT, () => {
+    console.log(`Portfolio app running at port ${PORT}`);
+});
+server.on("error", (error) => {
     if (error.syscall !== "listen") {
         throw error;
     }
@@ -44,18 +50,12 @@ app_1.default.on("error", (error) => {
         case "EACCES":
             console.error(bind + " requires elevated privileges");
             process.exit(1);
-            break;
         case "EADDRINUSE":
             console.error(bind + " is already in use");
             process.exit(1);
-            break;
         default:
             throw error;
     }
-});
-// Escuchar el servidor en el puerto especificado
-app_1.default.listen(PORT, () => {
-    console.log(`Portfolio app running at port ${PORT}`);
 });
 // Conexión a base de datos
 if (MODE === "deploy" || MODE === "development") {
@@ -64,3 +64,5 @@ if (MODE === "deploy" || MODE === "development") {
 else {
     console.error("Modo de conexión no válido");
 }
+// Socket Server
+exports.io = (0, socketConfig_1.createSocketServer)(server);

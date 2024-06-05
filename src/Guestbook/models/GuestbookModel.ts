@@ -5,7 +5,6 @@ const ProjectSchema = new Schema<IGuestbookComment>({
   guest: {
     name: { type: String, required: true },
     isGuest: { type: Boolean, default: true },
-    avatar: { type: String, required: true },
   },
   postData: {
     type: { type: String, default: "entry" },
