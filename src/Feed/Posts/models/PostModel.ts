@@ -29,6 +29,7 @@ const postSchema = new Schema<IPost>({
   },
   createdAt: { type: Date, required: true },
   likes: { type: Number, default: 0 },
+  isPinned: { type: Boolean, default: false },
 });
 
 // Creación del modelo utilizando el esquema definido

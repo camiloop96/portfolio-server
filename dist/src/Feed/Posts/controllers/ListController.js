@@ -17,7 +17,7 @@ const PostModel_1 = __importDefault(require("../models/PostModel"));
 // Función para obtener todas las publicaciones
 const ListPostController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const posts = yield PostModel_1.default.find().exec();
+        const posts = yield PostModel_1.default.find().sort({ isPinned: -1, createdAt: -1 });
         return res.status(200).json({
             mesage: "Posts obtenidos con éxido",
             payload: posts,

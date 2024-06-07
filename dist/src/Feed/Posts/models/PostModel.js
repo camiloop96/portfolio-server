@@ -29,6 +29,7 @@ const postSchema = new mongoose_1.Schema({
     },
     createdAt: { type: Date, required: true },
     likes: { type: Number, default: 0 },
+    isPinned: { type: Boolean, default: false },
 });
 // Creación del modelo utilizando el esquema definido
 const PostModel = (0, mongoose_1.model)("Post", postSchema);

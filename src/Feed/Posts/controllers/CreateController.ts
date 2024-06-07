@@ -6,7 +6,7 @@ export const CreatePostController = async (req: Request, res: Response) => {
   console.log(`${getCurrentDate()} POST api/camilo-polania/feed/post/create`);
 
   // Obtencion del cuerpo del json
-  let { type, hasTitle, content, hasFlags } = req.body;
+  let { type } = req.body;
 
   // Request
   let postRequest = req.body || {};
@@ -23,8 +23,6 @@ export const CreatePostController = async (req: Request, res: Response) => {
     });
   }
 
-  console.log(type);
-
   // Verificacion de typos de post
   if (type !== "image" && type !== "text" && type !== "video") {
     return res.status(400).json({
@@ -35,7 +33,10 @@ export const CreatePostController = async (req: Request, res: Response) => {
   try {
     let savePost = new PostModel();
     savePost.postData = postRequest;
-    savePost.createdAt = new Date(0);
+    savePost.createdAt = new Date(Date.now());
+    if (savePost.isPinned) {
+      savePost.isPinned = postRequest.isPinned;
+    }
     await savePost.save();
     return res.status(200).json({
       message: "Post creado",

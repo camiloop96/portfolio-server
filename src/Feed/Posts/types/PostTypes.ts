@@ -9,7 +9,7 @@ export interface IPost extends Document {
       alt: string;
     };
     hasTitle: boolean;
-    title?: string
+    title?: string;
     content: string;
     hasFlags: boolean;
     moodFlags: {
@@ -22,4 +22,5 @@ export interface IPost extends Document {
   };
   createdAt: Date;
   likes: number;
+  isPinned: boolean;
 }
