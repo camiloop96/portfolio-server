@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { getCurrentDate } from "../../../../utils/dateManager";
+import { getCurrentDate } from "../../../utils/dateManager";
 import PostModel from "../models/PostModel";
 
 export const CreatePostController = async (req: Request, res: Response) => {

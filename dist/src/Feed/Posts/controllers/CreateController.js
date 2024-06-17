@@ -13,7 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreatePostController = void 0;
-const dateManager_1 = require("../../../../utils/dateManager");
+const dateManager_1 = require("../../../utils/dateManager");
 const PostModel_1 = __importDefault(require("../models/PostModel"));
 const CreatePostController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     console.log(`${(0, dateManager_1.getCurrentDate)()} POST api/camilo-polania/feed/post/create`);
