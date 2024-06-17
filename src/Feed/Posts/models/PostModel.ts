@@ -26,6 +26,18 @@ const postSchema = new Schema<IPost>({
         color: { type: String, required: true },
       },
     ],
+    hasLink: {
+      type: Boolean,
+      required: true,
+    },
+    linkInfo: {
+      to: {
+        type: String,
+      },
+      title: {
+        type: String,
+      },
+    },
   },
   createdAt: { type: Date, required: true },
   likes: { type: Number, default: 0 },

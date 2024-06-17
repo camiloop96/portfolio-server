@@ -19,6 +19,11 @@ export interface IPost extends Document {
       backgroundColor: string;
       color: string;
     }[];
+    hasLink: boolean;
+    linkInfo: {
+      to: string;
+      title: string;
+    };
   };
   createdAt: Date;
   likes: number;
