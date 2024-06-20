@@ -66,6 +66,10 @@ const ProjectSchema = new Schema<IProject>({
     english: { type: String, required: true },
     spanish: { type: String, required: true },
   },
+  category: {
+    type: String,
+    required: true
+  }
 });
 
 const ProjectModel = model<IProject>("Project", ProjectSchema);

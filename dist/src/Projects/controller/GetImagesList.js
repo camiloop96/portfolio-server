@@ -12,13 +12,28 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProjectListController = void 0;
+exports.GetImagesProjectController = void 0;
 const ProjectModel_1 = __importDefault(require("../models/ProjectModel"));
-const ProjectListController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const GetImagesProjectController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { category } = req.params;
-        const projects = yield ProjectModel_1.default.find({ category: category }).select("-detail");
-        res.status(200).json(projects);
+        // Request
+        let { id } = req.params;
+        // Comprobacion de nulidad
+        if (!id) {
+            return res.status(400).json({
+                error: "Falta id de proyecto",
+            });
+        }
+        // Busqueda de proyecto
+        let projectExist = yield ProjectModel_1.default.findById(id);
+        // Comprobacion de nulidad
+        if (!projectExist) {
+            return res.status(400).json({
+                error: "Proyecto no existe",
+            });
+        }
+        const images = projectExist.images;
+        return res.status(200).json(images);
     }
     catch (error) {
         return res.status(500).json({
@@ -26,4 +41,4 @@ const ProjectListController = (req, res) => __awaiter(void 0, void 0, void 0, fu
         });
     }
 });
-exports.ProjectListController = ProjectListController;
+exports.GetImagesProjectController = GetImagesProjectController;

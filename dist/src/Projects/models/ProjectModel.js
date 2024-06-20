@@ -66,6 +66,10 @@ const ProjectSchema = new mongoose_1.Schema({
         english: { type: String, required: true },
         spanish: { type: String, required: true },
     },
+    category: {
+        type: String,
+        required: true
+    }
 });
 const ProjectModel = (0, mongoose_1.model)("Project", ProjectSchema);
 exports.default = ProjectModel;

@@ -41,4 +41,5 @@ export interface IProject extends Document {
   isOwn: boolean;
   detail: IDetail;
   license: IItem;
+  category: string;
 }

@@ -27,6 +27,7 @@ const ProjectCreateController = (req, res) => __awaiter(void 0, void 0, void 0, 
             "isPrivate",
             //   "isOwn",
             "detail",
+            "category"
         ];
         // Verificar que todos los campos obligatorios estén presentes
         const missingFields = requiredFields.filter((field) => !proyectItemRequest[field]);

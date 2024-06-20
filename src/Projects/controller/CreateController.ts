@@ -15,6 +15,7 @@ export const ProjectCreateController = async (req: Request, res: Response) => {
       "isPrivate",
       //   "isOwn",
       "detail",
+      "category"
     ];
 
     // Verificar que todos los campos obligatorios estén presentes
