@@ -27,9 +27,7 @@ This portfolio is a comprehensive showcase of my work as a Fullstack Developer. 
 
 ## 📸 Screenshots
 
-![Home Page](screenshots/home.png)
-![Projects Page](screenshots/projects.png)
-![Contact Page](screenshots/contact.png)
+![Home Page](screenshots/portfolio_5.webp)
 
 ## 📚 Getting Started
 
