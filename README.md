@@ -1,22 +1,22 @@
-# 🌐 Fullstack Personal Developer Portfolio
+# 🌐 Fullstack Personal Developer Portfolio (Backend Focus)
 
 ### 👨‍🦰Camilo Polanía☝️
 
-Welcome to my web Fullstack Developer Portfolio! This project showcases my skills and expertise in building servers, optimal data flows, persistent managed systems and a lot of technologies that help me build amazing applications!
+This portfolio is a comprehensive showcase of my work as a Fullstack Developer with a strong focus on backend development. It includes examples of my projects, skills, and contact information, providing a clear representation of my capabilities and professional experience.
 
 ![Portfolio Screenshot](screenshots/portfolio_2.webp)
 
 ## 🚀 Project Overview
 
-This portfolio is a comprehensive showcase of my work as a Fullstack Developer. It includes examples of my projects, skills and contact information, providing a clear representation of my capabilities and professional experience.
+This portfolio is a comprehensive showcase of my work as a Fullstack Developer with a strong focus on backend development. It includes examples of my projects, skills, and contact information, providing a clear representation of my capabilities and professional experience.
 
 ## 🎨 Features
 
-- **Modern UI/UX Design**: A clean and intuitive design built with ReactJS.
-- **Responsive Layout**: Fully responsive, ensuring a seamless experience across all devices.
-- **Fast Performance**: Leveraging Vite for a lightning-fast development and build process.
-- **Modular CSS**: Styles managed with SASS for better modularity and maintainability.
-- **Interactive Components**: Engaging UI components to demonstrate functionality.
+- **Robust Server-side Logic**: Built with Express.js to handle server-side logic efficiently.
+- **Database Integration**: Uses MongoDB for data storage and management.
+- **API Development**: Implements RESTful APIs for seamless data exchange.
+- **Authentication and Authorization**: Secure mechanisms for user authentication and role-based access control.
+- **Performance Optimization**: Techniques and tools to ensure optimal server
 
 ## 🛠️ Technologies Used
 
@@ -27,6 +27,7 @@ This portfolio is a comprehensive showcase of my work as a Fullstack Developer. 
 
 ## 📸 Screenshots
 
+![Home Page](screenshots/portfolio_2.webp)
 ![Home Page](screenshots/portfolio_5.webp)
 
 ## 📚 Getting Started
