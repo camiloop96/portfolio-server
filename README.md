@@ -4,7 +4,7 @@
 
 Welcome to my web Fullstack Developer Portfolio! This project showcases my skills and expertise in building servers, optimal data flows, persistent managed systems and a lot of technologies that help me build amazing applications!
 
-![Portfolio Screenshot](screenshot.png)
+![Portfolio Screenshot](screenshots/portfolio_2.webp)
 
 ## 🚀 Project Overview
 
