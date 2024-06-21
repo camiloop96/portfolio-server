@@ -9,10 +9,12 @@ const EducationRoutes_1 = __importDefault(require("../AcademicBackground/Educati
 const ProjectsRoutes_1 = __importDefault(require("../Projects/routes/ProjectsRoutes"));
 const ExperienceRoutes_1 = __importDefault(require("../Experience/ExperienceRoutes"));
 const GuestbookRoutes_1 = __importDefault(require("../Guestbook/routes/GuestbookRoutes"));
+const EmailRoutes_1 = __importDefault(require("../../src/Email/EmailRoutes"));
 const AppRoutes = (0, express_1.Router)();
 AppRoutes.use("/feed/", FeedRoutes_1.default);
 AppRoutes.use("/education/", EducationRoutes_1.default);
 AppRoutes.use("/projects/", ProjectsRoutes_1.default);
 AppRoutes.use("/experience/", ExperienceRoutes_1.default);
 AppRoutes.use("/guestbook/", GuestbookRoutes_1.default);
+AppRoutes.use("/email/", EmailRoutes_1.default);
 exports.default = AppRoutes;
